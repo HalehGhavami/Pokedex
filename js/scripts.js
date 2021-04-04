@@ -1,4 +1,4 @@
-
+//setting up a general dataset
 let pokemonList[];
   pokemonList = [
     {
