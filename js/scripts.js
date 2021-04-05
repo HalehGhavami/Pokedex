@@ -1,6 +1,5 @@
-//setting up a general dataset
-let pokemonList[];
-  pokemonList = [
+// Creating an array of objects
+let pokemonListgit = [
     {
     name :'Bulbasaur',
     height : 0.7,
@@ -15,5 +14,13 @@ let pokemonList[];
     name : 'Pikachu',
     height : 0.4,
     types : 'electric'
-    }
+  }
   ];
+ //Add a new object at the start
+let pokemon0 = {
+  name : 'Ivysaur',
+  height : 1,
+  types : ['grass','poison']
+};
+
+pokemonListgit.unshift(pokemon0);
