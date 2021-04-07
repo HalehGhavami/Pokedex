@@ -7,3 +7,8 @@ body {
   text-align: center;
   line-height: 1.6;
 }
+
+/* get rid of bullet-point */
+ul.pokemon-list {
+  list-style-type: none;
+}

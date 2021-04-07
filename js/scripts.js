@@ -27,7 +27,7 @@ for (let i = 0; i < pokemonList.length; i++) {
 
 //The conditional check if the height is above a certain value
   if (pokemonList[i].height > 0.4) {
-    document.write(' - Wow, that\'s big!') ;
+    document.write('- Wow, that\'s big!') ;
   }
  document.write('</li><br>');
 }
