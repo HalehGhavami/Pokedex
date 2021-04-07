@@ -24,6 +24,8 @@ document.write('<ul class="pokemon-list">');
 for (let i = 0; i < pokemonList.length; i++) {
 
   document.write('<li class="pokemon-list__item">'+ pokemonList[i].name + '(height:'+ pokemonList[i].height + ')');
+
+//The conditional check if the height is above a certain value
   if (pokemonList[i].height > 0.4) {
     document.write(' - Wow, that\'s big!') ;
   }
