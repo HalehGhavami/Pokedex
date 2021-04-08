@@ -12,3 +12,7 @@ body {
 ul.pokemon-list {
   list-style-type: none;
 }
+
+span {
+  font-weight: bold;
+}
