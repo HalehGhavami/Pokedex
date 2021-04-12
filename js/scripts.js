@@ -17,14 +17,13 @@ let pokemonList = [{
 ];
 
 // Display the data on the page as an unordered list
-
 document.write('<ul class="pokemon-list">');
+//forEach Loop iterates each pokemon name  and height.
+//Used + string concatenation instead of ${} (string interpolation)
+pokemonList.forEach(function(pokemon) {
+  document.write('<li class="pokemon-list__item"><b>' + pokemon.name + '</b> (height: ' + pokemon.height + ')');
 
-for (let i = 0; i < pokemonList.length; i++) {
 
-  //Used + string concatenation instead of ${} (string interpolation)
-
-  document.write('<li class="pokemon-list__item"><b>' + pokemonList[i].name + '</b> (height: ' + pokemonList[i].height + ')');
 
   /* Used this ECMAScript 6 feature that is named "template string literal" to be able to make bold just the names of pokemon-list__items and styling <span> tag by css*/
 
@@ -36,9 +35,11 @@ for (let i = 0; i < pokemonList.length; i++) {
 
   //The conditional check if the height is above a certain value
   // using <b> tag to bold part of a string display on page
-  if (pokemonList[i].height > 0.4) {
+
+
+  if (pokemon.height > 0.4) {
     document.write('<b>- Wow, that\'s big!</b>');
   }
   document.write('</li><br>');
-}
+});
 document.write('<ul>');
