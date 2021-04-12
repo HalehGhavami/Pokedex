@@ -1,3 +1,6 @@
+//Wrapped pokemonList array in an IIFE to avoid accidentally accessing the global state.
+//create a new pokemonRepository variable to hold what my IIFE will return
+let pokemonRepository = (function(){
 // Creating an array of objects
 let pokemonList = [
   {
@@ -17,6 +20,27 @@ let pokemonList = [
   }
 ];
 
+//The IIFE return an object with the following public functions assigned as keys:
+
+// add the Pokémon referred to with item to the pokemonList array)
+function add(pokemon) {
+  pokemonList.push(pokemon);
+}
+
+
+//return the pokemonList array
+function getAll() {
+  return pokemonList;
+}
+
+return{
+ getAll:getAll,
+ add:add
+ };
+
+})();
+
+
 // Display the data on the page as an unordered list
 document.write('<ul class="pokemon-list">');
 
@@ -31,6 +55,7 @@ function pokemonLoopFunction(pokemon) {
 };
 
 //forEach Loop iterates each pokemon name and height.
-pokemonList.forEach(pokemonLoopFunction);
+//update the loop code that are only accessible through one of the two functions returned by the IIFE
+pokemonRepository.getAll().forEach(pokemonLoopFunction);
 
 document.write('<ul>');
