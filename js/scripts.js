@@ -22,12 +22,14 @@ let pokemonList = [
 
 //The IIFE return an object with the following public functions assigned as keys:
 
-// add the Pokémon referred to with item to the pokemonList array)
+// add the Pokémon referred to with item to the pokemonList array +  datatype check
 function add(pokemon) {
-  pokemonList.push(pokemon);
+  if (typeof pokemon === 'object' && typeof pokemon !== null ) {
+  pokemonList.push(pokemon);}
+  else{
+    alert('type of parameter is not an object');
+  }
 }
-
-
 //return the pokemonList array
 function getAll() {
   return pokemonList;
@@ -40,6 +42,9 @@ return{
 
 })();
 
+//add the correct type of data to pokemonList array
+pokemonRepository.add({name: 'Raichu', height: 0.8,
+type: ['electric']});
 
 // Display the data on the page as an unordered list
 document.write('<ul class="pokemon-list">');
