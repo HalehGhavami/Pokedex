@@ -45,17 +45,14 @@ let pokemonRepository = (function() {
 pokemonRepository.add({
   name: 'Raichu',
   height: 0.8,
-  type: ['electric']
+  types: ['electric']
 });
 
 document.write('<ul class="pokemon-list">');
-
 //move the function declaration passed to forEach() to make things clearer
 function myLoopFunction(pokemon) {
-  document.write('<li class="pokemon-list__item"><b>' + pokemon.name + '</b> (height: ' + pokemon.height + ')');
-  if (pokemon.height > 0.4) {
-    document.write('<b>- Wow, that\'s big!</b>');
-  }
+  document.write('<li class="pokemon-list__item"><b>' + pokemon.name + '</b> (height: ' + pokemon.height + ')' + "<br>" + pokemon.types);
+
   document.write('</li><br>');
 };
 
