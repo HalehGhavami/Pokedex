@@ -1,7 +1,6 @@
 //Wrapped pokemonList array in an IIFE to avoid accidentally accessing the global state.
 //create a new pokemonRepository variable to hold what my IIFE will return
 let pokemonRepository = (function() {
-  // Creating an array of objects
   let pokemonList = [{
       name: 'Bulbasaur',
       height: 0.7,
@@ -29,6 +28,7 @@ let pokemonRepository = (function() {
       alert('type of parameter is not an object');
     }
   }
+  
   //return the pokemonList array
   function getAll() {
     return pokemonList;
@@ -48,13 +48,11 @@ pokemonRepository.add({
   type: ['electric']
 });
 
-// Display the data on the page as an unordered list
 document.write('<ul class="pokemon-list">');
 
 //move the function declaration passed to forEach() to make things clearer
 function pokemonLoopFunction(pokemon) {
   document.write('<li class="pokemon-list__item"><b>' + pokemon.name + '</b> (height: ' + pokemon.height + ')');
-  //The conditional check if the height is above a certain value
   if (pokemon.height > 0.4) {
     document.write('<b>- Wow, that\'s big!</b>');
   }
@@ -62,7 +60,7 @@ function pokemonLoopFunction(pokemon) {
 };
 
 //forEach Loop iterates each pokemon name and height.
-//update the loop code that are only accessible through one of the two functions returned by the IIFE
+
 pokemonRepository.getAll().forEach(pokemonLoopFunction);
 
 document.write('<ul>');
