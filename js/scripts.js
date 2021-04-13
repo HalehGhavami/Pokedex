@@ -28,7 +28,7 @@ let pokemonRepository = (function() {
       alert('type of parameter is not an object');
     }
   }
-  
+
   //return the pokemonList array
   function getAll() {
     return pokemonList;
@@ -51,7 +51,7 @@ pokemonRepository.add({
 document.write('<ul class="pokemon-list">');
 
 //move the function declaration passed to forEach() to make things clearer
-function pokemonLoopFunction(pokemon) {
+function myLoopFunction(pokemon) {
   document.write('<li class="pokemon-list__item"><b>' + pokemon.name + '</b> (height: ' + pokemon.height + ')');
   if (pokemon.height > 0.4) {
     document.write('<b>- Wow, that\'s big!</b>');
@@ -60,7 +60,10 @@ function pokemonLoopFunction(pokemon) {
 };
 
 //forEach Loop iterates each pokemon name and height.
+pokemonRepository.getAll().forEach(myLoopFunction);
 
-pokemonRepository.getAll().forEach(pokemonLoopFunction);
+
+
+
 
 document.write('<ul>');
