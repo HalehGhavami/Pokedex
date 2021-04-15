@@ -47,12 +47,19 @@ let pokemonRepository = (function() {
     //append the butten und the list to thier parents
     listItem.appendChild(button);
     pokemonList.appendChild(listItem);
+
   }
+
+  //execute the details of clicked pokemon on console
+    function showDetails(pokemon){
+        console.log(pokemon);}
+
 
   return {
     getAll: getAll,
     add: add,
     addListItem: addListItem,
+    showDetails:showDetails,
   };
 
 })();
