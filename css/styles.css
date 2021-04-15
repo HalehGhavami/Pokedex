@@ -7,22 +7,25 @@ body {
   line-height: 1.6;
 }
 
-/* get rid of bullet-point */
 ul.pokemon-list {
   list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: space-between;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1200px;
 }
 
 .button-class {
   background-color: #dd4040; /* Red */
-  border: none;
+  border-radius: 20px;
+  box-shadow: 0 3px 15px rgb(255, 0, 0);
   color: white;
-  padding: 16px 32px;
+  padding: 20px;
+  margin: 10px;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
   cursor: pointer;
+  font-size: 18px;
 }
