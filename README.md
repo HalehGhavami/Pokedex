@@ -4,7 +4,7 @@
 
 ## Atom HTML Preview:
 <p align="center">
-  <img src="img/AtomHTMLPreview.JPG" width="480">
+  <img src="img/AtomHTMLPreview.JPG" width="520">
   </p>
 
 
