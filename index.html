@@ -1,17 +1,33 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="CSS/style.production.css">
-    <title>Simple JS App</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="CSS/styles.css">
+  <link rel="stylesheet" type="text/css" href="CSS/style.production.css">
+  <title>Simple JS App</title>
 </head>
+
 <body>
   <h1>PokeDex</h1>
+  <!--Navigation for searching and adding-->
+  <form class="header-form">
+    <div class="search-form">
+      <input class="search-input" type="search" placeholder="Search Pokemon">
+      <button class="search-button" type="submit">Search</button>
+    </div>
+    <br>
+    <div class="add-form">
+      <input class="add-input" type="text" placeholder="Add Pokemon">
+      <button class="add-button" type="submit">Add</button>
+    </div>
+  </form>
+
   <ul class="pokemon-list"></ul>
-<script src="js/scripts.js"></script>
+  <script src="js/scripts.js"></script>
 </body>
+
 </html>

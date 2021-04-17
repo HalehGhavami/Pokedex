@@ -1,15 +1,24 @@
-
 * {
   box-sizing: border-box;
 }
 
 body {
-  color: #0f0f0f;
+  background: white;
   font-family: "Roboto", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+h1 {
   text-align: center;
-  line-height: 1.6;
+}
+
+.header-form {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 ul.pokemon-list {
@@ -20,6 +29,7 @@ ul.pokemon-list {
   justify-content: center;
   margin: 0 auto;
   max-width: 1200px;
+  padding: 0;
 }
 
 .button-class {
@@ -33,4 +43,19 @@ ul.pokemon-list {
   transition-duration: 0.4s;
   cursor: pointer;
   font-size: 18px;
+  width: 250px;
+  height: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.delete-button {
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.edit-button {
+  border-radius: 5px;
+  cursor: pointer;
 }

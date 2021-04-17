@@ -1,5 +1,3 @@
-//Wrapped repository array in an IIFE to avoid accidentally accessing the global state.
-//create a new pokemonRepository variable to hold what my IIFE will return
 let pokemonRepository = (function() {
   let repository = [{
       name: 'Bulbasaur',
@@ -18,9 +16,6 @@ let pokemonRepository = (function() {
     }
   ];
 
-  //The IIFE return an object with the following public functions assigned as keys:
-
-  // add the Pokémon referred to with item to the repository array +  datatype check
   function add(pokemon) {
     if (typeof pokemon === 'object' && typeof pokemon !== null) {
       repository.push(pokemon);
@@ -29,15 +24,25 @@ let pokemonRepository = (function() {
     }
   }
 
-  //return the repository array
   function getAll() {
     return repository;
   }
 
-  //creating lists and button in the DOM
   function addListItem(pokemon) {
     let pokemonList = document.querySelector('.pokemon-list');
     let listItem = document.createElement('li');
+
+    //creat delet button on the buttons of pokemon list
+    let deleteButton = document.createElement('button');
+    deleteButton.innerText = 'X';
+    deleteButton.classList.add('delete-button');
+
+    //creat edit button on the buttons of pokemon list
+    let editButton = document.createElement('button');
+    editButton.innerText = 'Edit';
+    editButton.classList.add('edit-button');
+
+
 
     //pokemon names on the buttons
     let button = document.createElement('button');
@@ -46,9 +51,13 @@ let pokemonRepository = (function() {
     //Event listener on click
     button.addEventListener('click', function(event) {
       showDetails(pokemon);
+
     });
 
-    //append the butten und the list to thier parents
+
+    //append the buttons and the list to thier parents
+    button.appendChild(editButton);
+    button.appendChild(deleteButton);
     listItem.appendChild(button);
     pokemonList.appendChild(listItem);
 

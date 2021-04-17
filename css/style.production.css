@@ -12,13 +12,7 @@
 body {
   background: white;
   font-family: "Roboto", sans-serif;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  display: block;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -26,6 +20,21 @@ body {
   -ms-flex-pack: center;
   justify-content: center;
   margin: 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+.header-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 ul.pokemon-list {
@@ -43,10 +52,11 @@ ul.pokemon-list {
   justify-content: center;
   margin: 0 auto;
   max-width: 1200px;
+  padding: 0;
 }
 
 .button-class {
-  background-color: #dd4040; /* Red */
+  background-color: #dd4040;  /* Red */
   border-radius: 20px;
   -webkit-box-shadow: 0 3px 15px rgb(255, 0, 0);
   box-shadow: 0 3px 15px rgb(255, 0, 0);
@@ -59,4 +69,25 @@ ul.pokemon-list {
   transition-duration: 0.4s;
   cursor: pointer;
   font-size: 18px;
+  width: 250px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.delete-button {
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.edit-button {
+  border-radius: 5px;
+  cursor: pointer;
 }
