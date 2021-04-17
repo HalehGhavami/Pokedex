@@ -1,6 +1,9 @@
+//IIFE
 let pokemonRepository = (function() {
+  //Empty array will be filld with pokemon objects from an API
   let pokemonList = [];
   // load data from an external source
+  // defined the API url in a variable
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
   function add(pokemon) {
@@ -15,6 +18,7 @@ let pokemonRepository = (function() {
     return pokemonList;
   }
 
+  //creating lists and button in the DOM
   function addListItem(pokemon) {
     let pokemonList = document.querySelector('.pokemon-list');
     let listpokemon = document.createElement('li');
@@ -103,10 +107,10 @@ let pokemonRepository = (function() {
 
 })();
 
-
-pokemonRepository.LoadList().then(function(pokemon) {
+//Calling the loadList function of pokemonrepository
+pokemonRepository.LoadList().then(function() {
+  //Executed the getAll function
   pokemonRepository.getAll().forEach(function(pokemon) {
     pokemonRepository.addListItem(pokemon);
   });
 });
-//
