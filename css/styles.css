@@ -59,3 +59,12 @@ ul.pokemon-list {
   border-radius: 5px;
   cursor: pointer;
 }
+
+/* remove box shadow on click */
+.button-class:active,
+.button-class:focus,
+.button-class:focus:active {
+  background-image: none;
+  outline: 0;
+  box-shadow: none;
+}
