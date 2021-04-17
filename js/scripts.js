@@ -89,9 +89,9 @@ let pokemonRepository = (function() {
 
 
   //execute the details of clicked pokemon on console
-  function showDetails(item) {
-    pokemonRepository.loadDetails(item).then(function() {
-      console.log(item);
+  function showDetails(pokemon) {
+    pokemonRepository.loadDetails(pokemon).then(function() {
+      console.log(pokemon);
     });
   }
 
