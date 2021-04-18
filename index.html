@@ -12,21 +12,30 @@
 </head>
 
 <body>
-  <h1>PokeDex</h1>
-  <!--Navigation for searching and adding-->
-  <form class="header-form">
-    <div class="search-form">
-      <input class="search-input" type="search" placeholder="Search Pokemon">
-      <button class="search-button" type="submit">Search</button>
-    </div>
-    <br>
-    <div class="add-form">
-      <input class="add-input" type="text" placeholder="Add Pokemon">
-      <button class="add-button" type="submit">Add</button>
-    </div>
-  </form>
-
-  <ul class="pokemon-list"></ul>
+  <header>
+    <!--Navigation for searching-->
+    <nav class="navbar">
+      <a class="navbar-brand" href="index.html">Pokédex</a>
+      <form id="filter">
+        <div class="search-form">
+          <input class="search-input" type="search" placeholder="Search Pokemon">
+          <button class="search-button" type="submit">Search</button>
+        </div>
+      </form>
+  </header>
+  <!-- Loading Image -->
+  <div id="loading">
+    <img class="loadingImage" src="img/loading.jpg">
+  </div>
+  <div class="page-container">
+    <ul class="pokemon-list"></ul>
+  </div>
+  <footer class="page-footer">
+    <p>
+      Made with <span class="heart-color">❤</span> by
+      <a href="https://github.com/HalehGhavami">Haleh Ghavami</a>
+    </p>
+  </footer>
   <script scr="js/promise-polyfill.js"></script>
   <script src="js/fetch.umd.js"></script>
   <script src="js/scripts.js"></script>
