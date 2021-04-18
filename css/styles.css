@@ -3,22 +3,12 @@
 }
 
 body {
-  background: white;
+  background: #96bb7c;
   font-family: "Roboto", sans-serif;
   display: block;
   align-items: center;
   justify-content: center;
   margin: 0;
-}
-
-h1 {
-  text-align: center;
-}
-
-.header-form {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
 }
 
 ul.pokemon-list {
@@ -33,7 +23,7 @@ ul.pokemon-list {
 }
 
 .button-class {
-  background-color: #dd4040; /* Red */
+  background-color: #dd4040;  /* Red */
   border-radius: 20px;
   box-shadow: 0 3px 15px rgb(255, 0, 0);
   color: white;
@@ -67,4 +57,72 @@ ul.pokemon-list {
   background-image: none;
   outline: 0;
   box-shadow: none;
+}
+
+.search-input {
+  display: inline-block;
+  width: auto;
+  vertical-align: middle;
+  border-radius: 10px;
+}
+
+.page-container {
+  margin-top: 100px;
+}
+
+a {
+  color: #184d47;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.navbar {
+  background-color: #96bb7c;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.search-button {
+  border: none;
+  border-radius: 10px;
+  background-color: #184d47;
+  color: #fad586;
+  padding: 10px;
+}
+
+.search-button:hover {
+  color: #fad586;
+  opacity: 0.8;
+}
+
+.loadingImage {
+  display: none;
+  margin: 150px;
+  align-self: center;
+  box-sizing: border-box;
+  opacity: 0.5;
+}
+
+.showImg {
+  display: block;
+  margin-left: 32%;
+  margin-top: 30%;
+}
+
+span.heart-color {
+  color: red;
+}
+
+.page-footer {
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
 }
