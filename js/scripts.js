@@ -53,6 +53,7 @@ let pokemonRepository = (function() {
 
   //fetch to GET the complete list of Pokémon
   function LoadList() {
+    showLoadingMessage();
     return fetch(apiUrl).then(function(response) {
       return response.json();
     }).then(function(json) {
@@ -62,31 +63,47 @@ let pokemonRepository = (function() {
           detailsUrl: item.url
         };
         //add each Pokémon from the results to my pokemonList variable.
+
         add(pokemon);
-        console.log(pokemon);
       });
+    }).then(function() {
+      hideLoadingMessage();
     }).catch(function(e) {
       console.error(e);
     })
+    hideLoadingMessage();
   }
 
   // - GET the Pokémon details using the URL from the Pokémon object in the parameter.
   // - Once the GET request is complete, use .then to return a JSON response
   function loadDetails(item) {
+    showLoadingMessage();
     let url = item.detailsUrl;
     return fetch(url).then(function(response) {
       return response.json();
-      // now second .then, assign some of the details we got from the response to the Pokémon in the pokemonList
     }).then(function(details) {
       item.imageUrl = details.sprites.front_default;
       item.height = details.height;
       item.types = details.types;
+    }).then(function() {
+      hideLoadingMessage();
     }).catch(function(e) {
       console.error(e);
     });
+    hideLoadingMessage();
   }
 
+  //shows the loading image
+  function showLoadingMessage() {
+    loadImage = document.querySelector(".loadingImage");
+    loadImage.classList.add("showImg");
+  }
 
+  //hides the loading image
+  function hideLoadingMessage() {
+    loadImage = document.querySelector(".loadingImage");
+    loadImage.classList.remove("showImg");
+  }
 
   //execute the details of clicked pokemon on console
   function showDetails(pokemon) {
@@ -102,15 +119,22 @@ let pokemonRepository = (function() {
     addListItem: addListItem,
     LoadList: LoadList,
     loadDetails: loadDetails,
-    showDetails: showDetails
+    showDetails: showDetails,
+    showLoadingMessage: showLoadingMessage,
+    hideLoadingMessage: hideLoadingMessage,
   };
 
 })();
 
 //Calling the loadList function of pokemonrepository
 pokemonRepository.LoadList().then(function() {
-  //Executed the getAll function
-  pokemonRepository.getAll().forEach(function(pokemon) {
-    pokemonRepository.addListItem(pokemon);
-  });
+  //shows loading image in browser
+  pokemonRepository.showLoadingMessage();
+  //timer to simulate the time it takes to load
+  setTimeout(function() {
+    pokemonRepository.getAll().forEach(function(pokemon) {
+      pokemonRepository.addListItem(pokemon);
+    })
+    pokemonRepository.hideLoadingMessage();
+  }, 2000)
 });
