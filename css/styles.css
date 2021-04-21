@@ -11,6 +11,15 @@ body {
   margin: 0;
 }
 
+header {
+  padding: 10px 0 20px 0;
+}
+
+h1 {
+  display: inline-block;
+  font-size: 32px;
+}
+
 ul.pokemon-list {
   list-style-type: none;
   display: flex;
@@ -40,16 +49,6 @@ ul.pokemon-list {
   align-items: center;
 }
 
-.delete-button {
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-.edit-button {
-  border-radius: 5px;
-  cursor: pointer;
-}
-
 /* remove box shadow on click */
 .button-class:active,
 .button-class:focus,
@@ -64,10 +63,6 @@ ul.pokemon-list {
   width: auto;
   vertical-align: middle;
   border-radius: 10px;
-}
-
-.page-container {
-  margin-top: 100px;
 }
 
 a {
@@ -125,4 +120,49 @@ span.heart-color {
   margin: 0 auto;
   padding: 1rem;
   text-align: center;
+}
+
+#modal-container {
+  display: none;
+}
+
+#modal-container.is-visible {
+  display: block;
+  padding: 20px;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.modal {
+  margin: auto;
+  display: inline-block;
+  background: #fff;
+  padding: 15px;
+  width: 500px;
+  max-width: 600px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.modal-close {
+  float: right;
+  border: 0;
+  background: none;
+  color: #777;
+  text-decoration: none;
+}
+
+.modal h2 {
+  margin-top: 0;
+  clear: both;
+}
+
+.modal p {
+  margin-bottom: 0;
 }
