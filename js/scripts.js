@@ -23,16 +23,6 @@ let pokemonRepository = (function() {
     let pokemonList = document.querySelector('.pokemon-list');
     let listpokemon = document.createElement('li');
 
-    //creat delete button on the buttons of pokemon list
-    let deleteButton = document.createElement('button');
-    deleteButton.innerText = 'X';
-    deleteButton.classList.add('delete-button');
-
-    //creat edit button on the buttons of pokemon list
-    let editButton = document.createElement('button');
-    editButton.innerText = 'Edit';
-    editButton.classList.add('edit-button');
-
     //pokemon names on the buttons
     let button = document.createElement('button');
     button.innerText = pokemon.name;
@@ -44,8 +34,6 @@ let pokemonRepository = (function() {
 
 
     //append the buttons and the list to thier parents
-    button.appendChild(editButton);
-    button.appendChild(deleteButton);
     listpokemon.appendChild(button);
     pokemonList.appendChild(listpokemon);
 
