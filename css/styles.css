@@ -15,11 +15,6 @@ header {
   padding: 10px 0 20px 0;
 }
 
-h1 {
-  display: inline-block;
-  font-size: 32px;
-}
-
 ul.pokemon-list {
   list-style-type: none;
   display: flex;
