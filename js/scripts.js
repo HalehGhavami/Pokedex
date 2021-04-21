@@ -1,10 +1,14 @@
 //IIFE
 let pokemonRepository = (function() {
-  //Empty array will be filld with pokemon objects from an API
   let pokemonList = [];
-  // load data from an external source
-  // defined the API url in a variable
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+  let modalContainer = document.querySelector('#modal-container');
+
+
+  function getAll() {
+    return pokemonList;
+  }
+
 
   function add(pokemon) {
     if (typeof pokemon === 'object' && typeof pokemon !== null) {
@@ -12,10 +16,6 @@ let pokemonRepository = (function() {
     } else {
       alert('pokemon is not correct');
     }
-  }
-
-  function getAll() {
-    return pokemonList;
   }
 
   //creating lists and button in the DOM
@@ -107,11 +107,43 @@ let pokemonRepository = (function() {
 
   //execute the details of clicked pokemon on console
   function showDetails(pokemon) {
+     modalContainer.innerHTML = '';
     pokemonRepository.loadDetails(pokemon).then(function() {
-      console.log(pokemon);
+      let modal = document.createElement('div');
+ modal.classList.add('modal');
+
+ let closeButton = document.createElement('button');
+ closeButton.classList.add('modal-close');
+ closeButton.innerText = 'X';
+ closeButton.addEventListener('click', function(event){
+   hideModal();
+ });
+
+ let pokemonName = document.createElement('h2');
+ pokemonName.classList.add('modal-title');
+ pokemonName.innerText = pokemon.name;
+
+ let pokemonHeight = document.createElement('p');
+ pokemonHeight.classList.add('modal-content');
+ pokemonHeight.innerText = 'Height: ' + pokemon.height;
+
+ let pokemonPicture = document.createElement('img');
+ pokemonPicture.src = pokemon.imageUrl;
+
+
+ modal.appendChild(closeButton);
+ modal.appendChild(pokemonName);
+ modal.appendChild(pokemonHeight);
+ modal.appendChild(pokemonPicture);
+ modalContainer.appendChild(modal);
+
+ modalContainer.classList.add('is-visible');
     });
   }
 
+  function hideModal() {
+    modalContainer.classList.remove('is-visible');
+  }
 
   return {
     getAll: getAll,
@@ -122,6 +154,7 @@ let pokemonRepository = (function() {
     showDetails: showDetails,
     showLoadingMessage: showLoadingMessage,
     hideLoadingMessage: hideLoadingMessage,
+    hideModal: hideModal
   };
 
 })();
