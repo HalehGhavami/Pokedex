@@ -22,6 +22,14 @@ body {
   margin: 0;
 }
 
+header {
+  padding: 10px 0 20px 0;
+}
+
+.page-container {
+  margin-top: 100px;
+}
+
 ul.pokemon-list {
   list-style-type: none;
   display: -webkit-box;
@@ -41,7 +49,7 @@ ul.pokemon-list {
 }
 
 .button-class {
-  background-color: #dd4040;  /* Red */
+  background-color: #dd4040;
   border-radius: 20px;
   -webkit-box-shadow: 0 3px 15px rgb(255, 0, 0);
   box-shadow: 0 3px 15px rgb(255, 0, 0);
@@ -65,16 +73,7 @@ ul.pokemon-list {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
-
-.delete-button {
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-.edit-button {
-  border-radius: 5px;
-  cursor: pointer;
+  text-transform: capitalize;
 }
 
 /* remove box shadow on click */
@@ -92,10 +91,6 @@ ul.pokemon-list {
   width: auto;
   vertical-align: middle;
   border-radius: 10px;
-}
-
-.page-container {
-  margin-top: 100px;
 }
 
 a {
@@ -163,4 +158,53 @@ span.heart-color {
   margin: 0 auto;
   padding: 1rem;
   text-align: center;
+}
+
+#modal-container {
+  display: none;
+}
+
+#modal-container.is-visible {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 50px;
+  left: 0;
+  text-align: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.modal {
+  margin: auto;
+  display: inline-block;
+  background: #fff;
+  padding: 15px;
+  width: 500px;
+  max-width: 300px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.modal-close {
+  float: right;
+  border: 0;
+  background: none;
+  color: #777;
+  text-decoration: none;
+}
+
+.modal h2 {
+  margin-top: 0;
+  clear: both;
+  text-transform: capitalize;
+}
+
+.modal p {
+  margin-bottom: 0;
 }
