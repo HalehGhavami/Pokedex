@@ -1,7 +1,7 @@
 # JavaScript App (Pokédex)
 
 <p align="center">
-  <img src="img/AtomHTMLPreview.JPG" width="520">
+  <img src="img/app.png" width="520">
   </p>
 
 ## About The Project
