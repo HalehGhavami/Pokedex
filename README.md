@@ -7,7 +7,7 @@
 ## About The Project
 
 Objective:
-- Build a small web application with HTML, CSS, and JavaScript that loads data from an external API and enables the viewing of data points in detail.
+- Build a basic app with vanilla JavaScript that gets some data, displays it in a responsive layout, and uses advanced UI patterns to display more details of individual items
 
 ## Features and Requirements
 
