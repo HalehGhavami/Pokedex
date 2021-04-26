@@ -1,14 +1,6 @@
-* {
-  box-sizing: border-box;
-}
-
 body {
   background: #96bb7c;
   font-family: 'Roboto', sans-serif;
-  display: block;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
 }
 
 header {
@@ -16,80 +8,20 @@ header {
 }
 
 .container {
-  margin-top: 200px;
+  margin-top: 100px;
 }
 
-.button-class {
-  background-color: #dd4040;
-  border-radius: 20px;
-  box-shadow: 0 3px 15px rgb(255, 0, 0);
-  color: white;
-  padding: 20px;
-  margin: 10px;
-  text-align: center;
-  transition-duration: 0.4s;
-  cursor: pointer;
-  font-size: 18px;
-  width: 250px;
-  height: 50px;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  text-transform: capitalize;
-}
-
-/* remove box shadow on click */
-.button-class:active,
-.button-class:focus,
-.button-class:focus:active {
-  background-image: none;
-  outline: 0;
-  box-shadow: none;
-}
-
-/* .search-input {
-  display: inline-block;
-  width: auto;
-  vertical-align: middle;
-  border-radius: 10px;
-} */
-
-a {
-  color: #184d47;
-  font-size: 20px;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-/* .navbar {
-  background-color: #96bb7c;
+.navbar {
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
   padding: 10px;
-} */
-
-/* .search-button {
-  border: none;
-  border-radius: 10px;
-  background-color: #184d47;
-  color: #fad586;
-  padding: 10px;
+  z-index: 999;
 }
-
-.search-button:hover {
-  color: #fad586;
-  opacity: 0.8;
-} */
 
 .loadingImage {
   display: none;
-  margin: 150px;
   align-self: center;
   box-sizing: border-box;
   opacity: 0.5;
@@ -99,72 +31,32 @@ a {
   display: block;
   margin-left: 32%;
   margin-top: 30%;
-}
-
-span.heart-color {
-  color: red;
-}
-
-.page-footer {
   margin: 0 auto;
-  padding: 1rem;
-  text-align: center;
-}
-
-/* #modal-container {
-  display: none;
-}
-
-#modal-container.is-visible {
-  display: flex;
-  padding: 20px;
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  top: 50px;
-  left: 0;
-  text-align: center;
-  justify-content: center;
-} */
-
-.modal {
-  margin: auto;
-  display: inline-block;
-  background: #fff;
-  padding: 15px;
-  width: 500px;
-  max-width: 300px;
-  text-align: center;
-  border-radius: 20px;
-}
-
-.modal-close {
-  float: right;
-  border: 0;
-  background: none;
-  color: #777;
-  text-decoration: none;
-}
-
-.modal h2 {
-  margin-top: 0;
-  clear: both;
-  text-transform: capitalize;
-}
-
-.modal p {
-  margin-bottom: 0;
 }
 
 .logo-pokedex {
-  height: 80px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  height: 50px;
 }
 
 .list-group {
   text-align: center;
-  width: 700px;
+  width: 450px;
   margin: 40px auto;
+}
+#pokemonModal {
+  text-align: center;
+}
+
+.img-element {
+  width: 180px;
+}
+
+.btn-block {
+  width: 100%;
+  text-transform: capitalize;
+}
+
+.modal-title {
+  text-transform: capitalize;
+  margin: 0 auto;
 }
