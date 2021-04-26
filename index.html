@@ -25,29 +25,31 @@
   </head>
 
   <body>
-    <header>
-      <!--Navigation for searching-->
-      <nav class="navbar">
-        <a class="navbar-brand" href="index.html">Pokédex</a>
-        <form id="filter">
-          <div class="search-form">
-            <input
-              class="search-input"
-              type="search"
-              placeholder="Search Pokemon"
-            />
-            <button class="search-button" type="submit">Search</button>
-          </div>
-        </form>
-      </nav>
-    </header>
+    <!--Navigation for searching-->
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand" href="index.html">
+        <img src="img/logo.png" alt="pokedex logo" class="logo-pokedex" />
+      </a>
+      <form class="form-inline">
+        <input
+          id="search-bar"
+          class="form-control"
+          type="search"
+          placeholder="Search Pokemon"
+        />
+        <!-- <button class="search-button btn btn-outline-sucess" type="submit">
+          Search
+        </button> -->
+      </form>
+    </nav>
+
     <!-- Loading Image -->
     <div id="loading">
       <img class="loadingImage" src="img/loading.jpg" />
     </div>
-    <div class="page-container">
-      <ul class="pokemon-list"></ul>
-      <div id="modal-container"></div>
+    <div class="container">
+      <ul class="list-group"></ul>
+      <!-- <div id="modal-container"></div> -->
     </div>
     <footer class="page-footer">
       <p>
