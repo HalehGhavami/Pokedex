@@ -23,12 +23,15 @@ let pokemonRepository = (function () {
     let listItem = document.createElement('li');
     listItem.classList.add('list-group-item');
     listItem.classList.add('list-group-item-action');
+    listItem.classList.add('mb-2');
 
     //pokemon names on the buttons
     let button = document.createElement('button');
     button.innerText = pokemon.name;
     button.classList.add('btn');
     button.classList.add('btn-block');
+    button.classList.add('btn-dark');
+
     button.setAttribute('data-target', '#pokemonModal');
     button.setAttribute('data-toggle', 'modal');
     listItem.appendChild(button);
