@@ -19,7 +19,7 @@ let pokemonRepository = (function () {
 
   //creating lists and button in the DOM
   function addListItem(pokemon) {
-    let container = document.querySelector('.list-group');
+    let container = document.querySelector('.list-group, .row');
     let listItem = document.createElement('li');
     listItem.classList.add('list-group-item');
     listItem.classList.add('list-group-item-action');
