@@ -11,15 +11,6 @@ header {
   margin-top: 100px;
 }
 
-.navbar {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  padding: 10px;
-  z-index: 999;
-}
-
 .loadingImage {
   display: none;
   align-self: center;
@@ -34,29 +25,11 @@ header {
   margin: 0 auto;
 }
 
-.logo-pokedex {
-  height: 50px;
-}
-
-.list-group {
-  text-align: center;
-  width: 450px;
-  margin: 40px auto;
-}
 #pokemonModal {
   text-align: center;
-}
-
-.img-element {
-  width: 180px;
 }
 
 .btn-block {
   width: 100%;
   text-transform: capitalize;
-}
-
-.modal-title {
-  text-transform: capitalize;
-  margin: 0 auto;
 }
