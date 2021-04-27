@@ -15,6 +15,7 @@ let pokemonRepository = (function () {
     } else {
       /* eslint-disable no-console */
       console.log('pokemon is not correct');
+      /* eslint-enable no-console */
     }
   }
 
@@ -42,22 +43,22 @@ let pokemonRepository = (function () {
   async function loadList() {
     showLoadingMessage();
     try {
-          const response = await fetch(apiUrl);
-          const json = await response.json();
-          json.results.forEach(function(item) {
-              let pokemon = {
-                  name: item.name,
-                  detailsUrl: item.url,
-              };
-              //add each Pokémon from the results to my pokemonList variable.
-              add(pokemon);
-          });
-          hideLoadingMessage();
-      }
-      catch (e) {
-          /* eslint-disable no-console */
-          console.error(e);
-      }
+      const response = await fetch(apiUrl);
+      const json = await response.json();
+      json.results.forEach(function (item) {
+        let pokemon = {
+          name: item.name,
+          detailsUrl: item.url,
+        };
+        //add each Pokémon from the results to my pokemonList variable.
+        add(pokemon);
+      });
+      hideLoadingMessage();
+    } catch (e) {
+      /* eslint-disable no-console */
+      console.error(e);
+      /* eslint-enable no-console */
+    }
   }
 
   // - GET the Pokémon details using the URL from the Pokémon object in the parameter.
@@ -80,6 +81,7 @@ let pokemonRepository = (function () {
         /* eslint-disable no-console */
         .catch(function (e) {
           console.error(e);
+          /* eslint-enable no-console */
         })
     );
   }
