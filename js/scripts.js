@@ -39,31 +39,25 @@ let pokemonRepository = (function () {
   }
 
   //fetch to GET the complete list of Pokémon
-  function loadList() {
+  async function loadList() {
     showLoadingMessage();
-    return fetch(apiUrl)
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (json) {
-        json.results.forEach(function (item) {
-          let pokemon = {
-            name: item.name,
-            detailsUrl: item.url,
-          };
-          //add each Pokémon from the results to my pokemonList variable.
-
-          add(pokemon);
-        });
-      })
-      .then(function () {
-        hideLoadingMessage();
-      })
-      .catch(function (e) {
-        /* eslint-disable no-console */
-        console.error(e);
-      });
-    hideLoadingMessage();
+    try {
+          const response = await fetch(apiUrl);
+          const json = await response.json();
+          json.results.forEach(function(item) {
+              let pokemon = {
+                  name: item.name,
+                  detailsUrl: item.url,
+              };
+              //add each Pokémon from the results to my pokemonList variable.
+              add(pokemon);
+          });
+          hideLoadingMessage();
+      }
+      catch (e) {
+          /* eslint-disable no-console */
+          console.error(e);
+      }
   }
 
   // - GET the Pokémon details using the URL from the Pokémon object in the parameter.
@@ -88,7 +82,6 @@ let pokemonRepository = (function () {
           console.error(e);
         })
     );
-    hideLoadingMessage();
   }
 
   //shows the loading image
@@ -108,7 +101,6 @@ let pokemonRepository = (function () {
     loadDetails(pokemon).then(function () {
       let modalBody = $('.modal-body');
       let modalTitle = $('.modal-title');
-      let modalHeader = $('.modal-header');
       //clear existing content of the modal
       modalTitle.empty();
       modalBody.empty();
