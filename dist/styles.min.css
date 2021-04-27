@@ -1,0 +1,29 @@
+body {
+  background: #96bb7c;
+  font-family: Roboto, sans-serif;
+}
+header {
+  padding: 10px 0 20px 0;
+}
+.container {
+  margin-top: 100px;
+}
+.loadingImage {
+  display: none;
+  align-self: center;
+  box-sizing: border-box;
+  opacity: 0.5;
+}
+.showImg {
+  display: block;
+  margin-left: 32%;
+  margin-top: 30%;
+  margin: 0 auto;
+}
+#pokemonModal {
+  text-align: center;
+}
+.btn-block {
+  width: 100%;
+  text-transform: capitalize;
+}
