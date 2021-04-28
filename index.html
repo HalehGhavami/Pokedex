@@ -1,4 +1,4 @@
-d<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -45,9 +45,13 @@ d<!DOCTYPE html>
 
     <div class="container">
       <!-- Loading Image -->
-      <id id="loading">
-        <img class="loadingImage img-fluid" src="img/loading.jpg" />
-      </id>
+      <div id="loading">
+        <img
+          class="loadingImage img-fluid"
+          alt="loading image"
+          src="img/loading.jpg"
+        />
+      </div>
 
       <ul class="list-group"></ul>
     </div>
@@ -62,7 +66,9 @@ d<!DOCTYPE html>
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title text-capitalize" id="pokemonModalLabel"></h5>
+            <h5 class="modal-title text-capitalize" id="pokemonModalLabel">
+              ...
+            </h5>
             <button
               type="button"
               class="close"
@@ -103,8 +109,8 @@ d<!DOCTYPE html>
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
-    <script scr="js/promise-polyfill.js"></script>
-    <script src="js/fetch.umd.js"></script>
+    <script src="dist/promise-polyfill.js"></script>
+    <script src="dist/fetch.umd.js"></script>
     <script src="dist/scripts.min.js"></script>
   </body>
 </html>
