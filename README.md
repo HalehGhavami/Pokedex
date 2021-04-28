@@ -48,4 +48,4 @@ TECHNOLOGIES USED
 
 ## Project link:
 
-https://halehghavami.github.io/simple-js-app/
+https://halehghavami.github.io/Pokedex/
