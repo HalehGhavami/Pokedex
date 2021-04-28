@@ -40,25 +40,33 @@ let pokemonRepository = (function () {
   }
 
   //fetch to GET the complete list of Pokémon
-  async function loadList() {
+  function loadList() {
     showLoadingMessage();
-    try {
-      const response = await fetch(apiUrl);
-      const json = await response.json();
-      json.results.forEach(function (item) {
-        let pokemon = {
-          name: item.name,
-          detailsUrl: item.url,
-        };
-        //add each Pokémon from the results to my pokemonList variable.
-        add(pokemon);
+    return fetch(apiUrl)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (json) {
+        json.results.forEach(function (item) {
+          let pokemon = {
+            name: item.name,
+            detailsUrl: item.url,
+          };
+          //add each Pokémon from the results to my pokemonList variable.
+
+          add(pokemon);
+        });
+      })
+      .then(function () {
+        hideLoadingMessage();
+      })
+
+      .catch(function (e) {
+        /* eslint-disable no-console */
+        console.error(e);
+        /* eslint-disable no-console */
       });
-      hideLoadingMessage();
-    } catch (e) {
-      /* eslint-disable no-console */
-      console.error(e);
-      /* eslint-enable no-console */
-    }
+    hideLoadingMessage();
   }
 
   // - GET the Pokémon details using the URL from the Pokémon object in the parameter.
@@ -66,24 +74,24 @@ let pokemonRepository = (function () {
   function loadDetails(item) {
     showLoadingMessage();
     let url = item.detailsUrl;
-    return (
-      fetch(url)
-        .then(function (response) {
-          return response.json();
-        })
-        .then(function (details) {
-          item.imageUrl = details.sprites.other.dream_world.front_default;
-          item.height = details.height;
-        })
-        .then(function () {
-          hideLoadingMessage();
-        })
+    return fetch(url)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (details) {
+        item.imageUrl = details.sprites.other.dream_world.front_default;
+        item.height = details.height;
+      })
+      .then(function () {
+        hideLoadingMessage();
+      })
+
+      .catch(function (e) {
         /* eslint-disable no-console */
-        .catch(function (e) {
-          console.error(e);
-          /* eslint-enable no-console */
-        })
-    );
+        console.error(e);
+        /* eslint-enable no-console */
+      });
+    hideLoadingMessage();
   }
 
   //shows the loading image
@@ -103,6 +111,7 @@ let pokemonRepository = (function () {
     loadDetails(pokemon).then(function () {
       let modalBody = $('.modal-body');
       let modalTitle = $('.modal-title');
+      let modalHeader = $('.modal-header');
       //clear existing content of the modal
       modalTitle.empty();
       modalBody.empty();
